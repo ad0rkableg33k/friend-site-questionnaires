@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glass Shop Site Questionnaire</title>
+<style>
+  :root {
+    --accent: #4b5563;
+    --bg: #f4f6f8;
+    --ink: #22252a;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { text-align: center; margin-bottom: 32px; }
+  header h1 { font-size: 1.8rem; margin: 0 0 6px; }
+  header p { color: var(--muted); margin: 0; }
+  .cat {
+    background: var(--bg);
+    border: 1px solid #dfe3e8;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 22px;
+  }
+  .cat h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+  .q { margin-bottom: 18px; }
+  .q:last-child { margin-bottom: 0; }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 0.97rem;
+  }
+  .note {
+    display: block;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  textarea, input[type=text], input[type=email] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+  }
+  textarea:focus, input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .submit-row { text-align: center; margin-top: 28px; }
+  button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 13px 34px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { opacity: 0.92; }
+  .status { text-align: center; margin-top: 16px; font-size: 0.92rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🔥 Glass Shop Site Questionnaire</h1>
+    <p>Fill this out so I can start building your site — takes about 10 minutes.</p>
+  </header>
+
+  <!-- Replace YOUR_FORM_ID below with your real Formspree endpoint -->
+  <form action="https://formspree.io/f/xojgelnr" method="POST">
+    <input type="hidden" name="_subject" value="Glass Shop Site Questionnaire submission">
+
+    <div class="cat">
+      <h2>Your Info</h2>
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" name="Name" required>
+      </div>
+      <div class="q">
+        <label>Your email</label>
+        <input type="email" name="Email" required>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Business Basics</h2>
+      <div class="q">
+        <label>Business/brand name — and do you have a logo already, or need one made?</label>
+        <textarea name="Brand name and logo" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Is this a registered business (LLC, sole prop) or a side hustle?</label>
+        <textarea name="Business registration" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you need an age-verification gate on entry (18+/21+)?</label>
+        <span class="note">Common for glass/smoke sites, and often legally required depending on state.</span>
+        <textarea name="Age gate" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any existing social media (Instagram, TikTok, Etsy) to pull branding/content from?</label>
+        <textarea name="Existing social media" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Products</h2>
+      <div class="q">
+        <label>Roughly how many products do you sell?</label>
+        <span class="note">10? 50? 200+? This determines if we need a simple grid or a full catalog/filter system.</span>
+        <textarea name="Number of products" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Product categories</label>
+        <span class="note">bubblers, burners, accessories, cleaning supplies, bulk/wholesale, etc.</span>
+        <textarea name="Product categories" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Is each piece one-of-a-kind (handblown, unique) or do you restock the same designs?</label>
+        <textarea name="One of a kind or restocked" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you need variants per product (size, color) or is every listing unique?</label>
+        <textarea name="Variants" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you have product photos already, or do we need to plan a shoot?</label>
+        <span class="note">Glass photographs best against dark or neutral backgrounds with strong lighting.</span>
+        <textarea name="Product photos" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Selling &amp; Payments</h2>
+      <div class="q">
+        <label>Do you want to sell online (cart + checkout), or just showcase items and have people DM/email to buy?</label>
+        <textarea name="Selling method" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>If selling online: which payment processor (Stripe, Square, PayPal)?</label>
+        <span class="note">Some processors restrict smoke-adjacent products — worth checking first.</span>
+        <textarea name="Payment processor" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you ship, offer local pickup, or both?</label>
+        <textarea name="Shipping or pickup" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any age-verification requirement at checkout?</label>
+        <textarea name="Checkout age verification" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Content &amp; Vibe</h2>
+      <div class="q">
+        <label>Describe the aesthetic in 3 words</label>
+        <span class="note">e.g. "moody, artistic, premium" vs "colorful, fun, streetwear"</span>
+        <textarea name="Aesthetic" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any competitor sites or brands whose look you like?</label>
+        <textarea name="Competitor inspiration" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you want a blog/content section (cleaning guides, glass care tips) for SEO?</label>
+        <textarea name="Blog section" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any specific colors, fonts, or existing brand assets to use?</label>
+        <textarea name="Brand assets" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Practical</h2>
+      <div class="q">
+        <label>Do you already own a domain name? If not, what do you want it to be?</label>
+        <textarea name="Domain name" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any current site to migrate content from?</label>
+        <textarea name="Current site" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Who updates the site later — you, or me on an ongoing basis?</label>
+        <textarea name="Ongoing updates" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit">Submit Questionnaire</button>
+      <div class="status">Your answers go straight to me by email — nothing is saved on this page.</div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
