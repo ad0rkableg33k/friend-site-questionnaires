@@ -2,236 +2,259 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cheesecake Business Site Questionnaire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist Website Questionnaire</title>
 <style>
-  :root {
-    --accent: #ff6b6b;
-    --bg: #16151a;
-    --ink: #f5f0f5;
-    --muted: #a89aab;
-  }
   * { box-sizing: border-box; }
-  @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Grotesk:wght@400;500;700&display=swap');
   body {
     margin: 0;
-    font-family: 'Space Grotesk', -apple-system, sans-serif;
-    color: var(--ink);
-    background: #0a0a0d;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(255,20,147,0.06), transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(255,0,255,0.06), transparent 40%);
-    line-height: 1.55;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #f6f5f3;
+    color: #1e1e1e;
+    line-height: 1.6;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-  header { text-align: center; margin-bottom: 32px; }
-  header h1 {
-    font-size: 1.8rem;
-    margin: 0 0 6px;
-    background: linear-gradient(90deg, #ff6b6b, #ff69b4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 1.9rem; margin-bottom: 6px; }
+  .intro { color: #555; margin-bottom: 36px; }
+  fieldset {
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 28px 0;
+    margin: 0;
   }
-  header p { color: var(--muted); margin: 0; }
-  .cat {
-    background: var(--bg);
-    border: 1px solid rgba(255,107,107,0.25);
-    border-left: 3px solid var(--accent);
-    border-radius: 4px;
-    padding: 24px 28px;
-    margin-bottom: 22px;
+  fieldset:first-of-type { border-top: none; padding-top: 0; }
+  legend {
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0;
+    margin-bottom: 4px;
   }
-  .cat h2 {
-    font-family: 'Special Elite', monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #ff69b4;
-    margin: 0 0 18px;
-  }
-  .q { margin-bottom: 18px; }
-  .q:last-child { margin-bottom: 0; }
+  .field-note { color: #777; font-size: 0.9rem; margin: 0 0 14px; }
   label {
     display: block;
-    font-weight: 700;
-    margin-bottom: 4px;
-    font-size: 0.97rem;
-    color: #ffffff;
+    font-weight: 600;
+    margin: 18px 0 6px;
+    font-size: 0.95rem;
   }
-  .note {
-    display: block;
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-bottom: 6px;
-  }
-  textarea, input[type=text], input[type=email] {
+  label .hint { font-weight: 400; color: #888; font-size: 0.85rem; display: block; margin-top: 2px; }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  textarea,
+  select {
     width: 100%;
     padding: 10px 12px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.04);
-    color: var(--ink);
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-family: inherit;
-    font-size: 0.95rem;
-    resize: vertical;
+    font-size: 1rem;
+    background: #fff;
   }
-  textarea::placeholder, input::placeholder { color: #5c525e; }
-  textarea:focus, input:focus {
-    outline: none;
-    border-color: #ff69b4;
-    background: rgba(255,105,180,0.05);
+  textarea { resize: vertical; min-height: 80px; }
+  .radio-row, .checkbox-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 6px;
   }
-  .submit-row { text-align: center; margin-top: 28px; }
-  button {
-    background: linear-gradient(90deg, #ff1493, #d946ef);
+  .radio-row label, .checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400;
+    margin: 0;
+  }
+  .platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+  }
+  @media (max-width: 560px) {
+    .platform-grid { grid-template-columns: 1fr; }
+  }
+  button[type="submit"] {
+    margin-top: 36px;
+    background: #1e1e1e;
     color: #fff;
     border: none;
-    padding: 13px 34px;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 1.05rem;
     font-weight: 700;
     cursor: pointer;
-    font-family: inherit;
   }
-  button:hover { opacity: 0.9; }
-  .status { text-align: center; margin-top: 16px; font-size: 0.92rem; color: var(--muted); }
+  button[type="submit"]:hover { background: #3a3a3a; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>🍰 Cheesecake Business Site Questionnaire</h1>
-    <p>Fill this out so I can start building your site — takes about 10 minutes.</p>
-  </header>
 
-  <!-- Replace YOUR_FORM_ID below with your real Formspree endpoint -->
-  <form action="https://formspree.io/f/mvzekqbe" method="POST">
-    <input type="hidden" name="_subject" value="Cheesecake Business Site Questionnaire submission">
+  <h1>Artist Website Questionnaire</h1>
+  <p class="intro">This helps us build one central hub for your music, videos, merch, tour dates, and photos — everything in one spot. Answer what you can; "not sure yet" is a totally fine answer anywhere.</p>
 
-    <div class="cat">
-      <h2>Your Info</h2>
-      <div class="q">
-        <label>Your name</label>
-        <input type="text" name="Name" required>
-      </div>
-      <div class="q">
-        <label>Your email</label>
-        <input type="email" name="Email" required>
-      </div>
-    </div>
+  <!--
+    TODO (setup step): replace YOUR_FORM_ID with a real Formspree
+    endpoint before sending this to anyone — same process as the
+    cheesecake site questionnaire.
+  -->
+  <form action="https://formspree.io/f/xkodqekd" method="POST">
+    <input type="hidden" name="_subject" value="Artist Website Questionnaire submission">
 
-    <div class="cat">
-      <h2>Business Basics</h2>
-      <div class="q">
-        <label>Business/brand name — and do you have a logo already?</label>
-        <textarea name="Brand name and logo" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Is this a licensed home bakery (cottage food law) or a commercial kitchen?</label>
-        <span class="note">Affects what claims you can legally make about ordering/delivery area.</span>
-        <textarea name="Bakery licensing" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>What area do you serve — local delivery/pickup only, or shipping nationwide?</label>
-        <textarea name="Service area" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Any existing Instagram/Facebook/Etsy presence to pull from?</label>
-        <textarea name="Existing social media" rows="2"></textarea>
-      </div>
-    </div>
+    <fieldset>
+      <legend>The Basics</legend>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <div class="cat">
-      <h2>Products</h2>
-      <div class="q">
-        <label>Is the menu fixed (same flavors always available) or rotating/seasonal?</label>
-        <textarea name="Menu type" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Roughly how many flavors/products at a time?</label>
-        <textarea name="Number of flavors" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you do custom orders (custom flavors, sizes, designs for events)?</label>
-        <span class="note">If so, you'll likely want a custom order request form.</span>
-        <textarea name="Custom orders" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you sell whole cakes only, or also slices/minis/jars?</label>
-        <textarea name="Product formats" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you have good photos already, or do we need to plan a shoot?</label>
-        <span class="note">Natural light, styled shots — makes a huge difference for food. Upload any existing photos here — no account needed: <a href="https://mega.nz/filerequest/evZIuV38PqM" target="_blank" style="color:#ff69b4;">mega.nz/filerequest/evZIuV38PqM</a></span>
-        <textarea name="Product photos" rows="2" placeholder="Let me know once you've uploaded, or if you don't have photos yet"></textarea>
-      </div>
-    </div>
+      <label for="artist_name">Artist / Band Name</label>
+      <input type="text" id="artist_name" name="artist_name" required>
 
-    <div class="cat">
-      <h2>Ordering &amp; Payments</h2>
-      <div class="q">
-        <label>How do people currently order — DM, phone, text? Keep that, or move to an online order form/cart?</label>
-        <textarea name="Ordering method" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you need date/time selection for pickup?</label>
-        <span class="note">Baked goods usually need lead time.</span>
-        <textarea name="Pickup scheduling" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>How do you want to get paid?</label>
-        <span class="note">Since you don't have anything set up yet — bakeries are a totally standard, low-risk category, so any of these work: Square (great all-around pick, has built-in order/pickup scheduling), Stripe (clean custom checkout), PayPal (customers already trust it), or Venmo/Cash App Business (simplest, good for casual local orders). Let me know which sounds good, or if you want a recommendation.</span>
-        <textarea name="Payment method" rows="3"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you need a way to block out days you're not taking orders?</label>
-        <textarea name="Blackout days" rows="2"></textarea>
-      </div>
-    </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-    <div class="cat">
-      <h2>Content &amp; Vibe</h2>
-      <div class="q">
-        <label>Describe the vibe in 3 words</label>
-        <span class="note">e.g. "cozy, homemade, elegant" vs "bold, modern, boutique"</span>
-        <textarea name="Aesthetic" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Any bakery websites/brands you love the look of?</label>
-        <textarea name="Competitor inspiration" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Do you want customer reviews/testimonials featured?</label>
-        <textarea name="Testimonials" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Any brand colors or fonts already in use (packaging, labels, social posts)?</label>
-        <textarea name="Brand assets" rows="2"></textarea>
-      </div>
-    </div>
+      <label for="location">Where are you based? <span class="hint">City/region is fine</span></label>
+      <input type="text" id="location" name="location">
+    </fieldset>
 
-    <div class="cat">
-      <h2>Practical</h2>
-      <div class="q">
-        <label>Domain name — do you have one, or need to pick one?</label>
-        <textarea name="Domain name" rows="2"></textarea>
+    <fieldset>
+      <legend>About You</legend>
+      <p class="field-note">The story behind the music — bio, background, what you want listeners to know.</p>
+      <label>Do you want an About/Bio section?</label>
+      <div class="radio-row">
+        <label><input type="radio" name="about_wanted" value="yes"> Yes</label>
+        <label><input type="radio" name="about_wanted" value="no"> No</label>
+        <label><input type="radio" name="about_wanted" value="not sure"> Not sure</label>
       </div>
-      <div class="q">
-        <label>Want an "About" section telling your story?</label>
-        <span class="note">Home bakeries often do really well leaning into the personal story.</span>
-        <textarea name="About section" rows="2"></textarea>
-      </div>
-      <div class="q">
-        <label>Who updates the menu/flavors later — you, or me?</label>
-        <textarea name="Ongoing updates" rows="2"></textarea>
-      </div>
-    </div>
+      <label for="bio_text">If yes, paste your bio here (or a rough draft — we can help polish it)</label>
+      <textarea id="bio_text" name="bio_text"></textarea>
+    </fieldset>
 
-    <div class="submit-row">
-      <button type="submit">Submit Questionnaire</button>
-      <div class="status">Your answers go straight to me by email — nothing is saved on this page.</div>
-    </div>
+    <fieldset>
+      <legend>Look &amp; Feel</legend>
+      <label for="aesthetic">How do you want the site to feel? <span class="hint">e.g. dark and moody, bright and playful, minimal, vintage, DIY punk — whatever fits the music</span></label>
+      <textarea id="aesthetic" name="aesthetic"></textarea>
+
+      <label for="brand_assets">Do you already have a logo, color palette, or fonts you use?</label>
+      <textarea id="brand_assets" name="brand_assets"></textarea>
+
+      <label for="inspiration">Any artist websites you like the look of? <span class="hint">Links are great</span></label>
+      <textarea id="inspiration" name="inspiration"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Where People Can Hear You</legend>
+      <p class="field-note">Paste links for anywhere your music lives — we'll pull these into one "listen everywhere" hub.</p>
+      <div class="platform-grid">
+        <div>
+          <label for="spotify">Spotify</label>
+          <input type="url" id="spotify" name="spotify" placeholder="https://">
+        </div>
+        <div>
+          <label for="apple_music">Apple Music</label>
+          <input type="url" id="apple_music" name="apple_music" placeholder="https://">
+        </div>
+        <div>
+          <label for="youtube_music">YouTube / YouTube Music</label>
+          <input type="url" id="youtube_music" name="youtube_music" placeholder="https://">
+        </div>
+        <div>
+          <label for="soundcloud">SoundCloud</label>
+          <input type="url" id="soundcloud" name="soundcloud" placeholder="https://">
+        </div>
+        <div>
+          <label for="bandcamp">Bandcamp</label>
+          <input type="url" id="bandcamp" name="bandcamp" placeholder="https://">
+        </div>
+        <div>
+          <label for="other_platform">Other platform</label>
+          <input type="text" id="other_platform" name="other_platform" placeholder="Name + link">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Music Videos</legend>
+      <label for="videos">Links to any music videos, lyric videos, or live session videos to feature</label>
+      <textarea id="videos" name="videos"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Merchandise</legend>
+      <label>Do you already sell merch somewhere?</label>
+      <div class="radio-row">
+        <label><input type="radio" name="merch_status" value="existing store"> Yes, existing store</label>
+        <label><input type="radio" name="merch_status" value="need one built"> No, need one built</label>
+        <label><input type="radio" name="merch_status" value="not yet"> Not selling merch yet</label>
+      </div>
+      <label for="merch_link">If you have an existing store (Bandcamp, Shopify, Etsy, etc.), paste the link</label>
+      <input type="url" id="merch_link" name="merch_link" placeholder="https://">
+      <label for="merch_items">What do you sell or want to sell? <span class="hint">Shirts, vinyl, posters, stickers, etc.</span></label>
+      <textarea id="merch_items" name="merch_items"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tours &amp; Shows</legend>
+      <label>Do you have upcoming shows or tour dates to list?</label>
+      <div class="radio-row">
+        <label><input type="radio" name="tour_status" value="yes"> Yes</label>
+        <label><input type="radio" name="tour_status" value="no"> Not right now</label>
+      </div>
+      <label for="tour_details">List any confirmed dates, venues, cities, and ticket links you have so far</label>
+      <textarea id="tour_details" name="tour_details"></textarea>
+      <label for="ticketing">What ticketing platform do you use, if any? <span class="hint">e.g. Ticketmaster, Bandsintown, DICE, or the venue's own site</span></label>
+      <input type="text" id="ticketing" name="ticketing">
+    </fieldset>
+
+    <fieldset>
+      <legend>Photos</legend>
+      <label>Do you have press/band photos ready to send?</label>
+      <div class="radio-row">
+        <label><input type="radio" name="photos_status" value="yes"> Yes, ready to send</label>
+        <label><input type="radio" name="photos_status" value="some"> Have some, need more</label>
+        <label><input type="radio" name="photos_status" value="none"> Don't have any yet</label>
+      </div>
+      <label for="photos_notes">Anything to note about the photos? <span class="hint">Who to credit, which are your favorites, etc.</span></label>
+      <textarea id="photos_notes" name="photos_notes"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Social &amp; Contact</legend>
+      <label for="social_media">Existing social media handles <span class="hint">Instagram, TikTok, X, Facebook, etc.</span></label>
+      <textarea id="social_media" name="social_media"></textarea>
+
+      <label for="booking_contact">Booking/business contact info, if different from your email above</label>
+      <input type="text" id="booking_contact" name="booking_contact">
+    </fieldset>
+
+    <fieldset>
+      <legend>Reviews &amp; Press</legend>
+      <label for="testimonials">Any press quotes, reviews, or fan testimonials you'd like featured?</label>
+      <textarea id="testimonials" name="testimonials"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Site Logistics</legend>
+      <label for="domain">Domain name — already own one, or need help picking?</label>
+      <input type="text" id="domain" name="domain">
+
+      <label>Will you be able to send us ongoing updates yourself (new releases, tour dates, etc.)?</label>
+      <div class="radio-row">
+        <label><input type="radio" name="ongoing_updates" value="yes"> Yes</label>
+        <label><input type="radio" name="ongoing_updates" value="no"> No, need help with that</label>
+        <label><input type="radio" name="ongoing_updates" value="sometimes"> Sometimes</label>
+      </div>
+
+      <label for="blackout">Any release schedule quirks or dates we should plan around?</label>
+      <input type="text" id="blackout" name="blackout">
+    </fieldset>
+
+    <fieldset>
+      <legend>Anything Else</legend>
+      <label for="notes">Anything not covered above that we should know?</label>
+      <textarea id="notes" name="notes"></textarea>
+    </fieldset>
+
+    <button type="submit">Submit Questionnaire</button>
   </form>
 </div>
 </body>

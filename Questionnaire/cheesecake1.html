@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cheesecake Business Site Questionnaire</title>
+<style>
+  :root {
+    --accent: #ff6b6b;
+    --bg: #16151a;
+    --ink: #f5f0f5;
+    --muted: #a89aab;
+  }
+  * { box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Grotesk:wght@400;500;700&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    color: var(--ink);
+    background: #0a0a0d;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(255,20,147,0.06), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(255,0,255,0.06), transparent 40%);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+  header { text-align: center; margin-bottom: 32px; }
+  header h1 {
+    font-size: 1.8rem;
+    margin: 0 0 6px;
+    background: linear-gradient(90deg, #ff6b6b, #ff69b4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p { color: var(--muted); margin: 0; }
+  .cat {
+    background: var(--bg);
+    border: 1px solid rgba(255,107,107,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-bottom: 22px;
+  }
+  .cat h2 {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ff69b4;
+    margin: 0 0 18px;
+  }
+  .q { margin-bottom: 18px; }
+  .q:last-child { margin-bottom: 0; }
+  label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 0.97rem;
+    color: #ffffff;
+  }
+  .note {
+    display: block;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  textarea, input[type=text], input[type=email] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+  }
+  textarea::placeholder, input::placeholder { color: #5c525e; }
+  textarea:focus, input:focus {
+    outline: none;
+    border-color: #ff69b4;
+    background: rgba(255,105,180,0.05);
+  }
+  .submit-row { text-align: center; margin-top: 28px; }
+  button {
+    background: linear-gradient(90deg, #ff1493, #d946ef);
+    color: #fff;
+    border: none;
+    padding: 13px 34px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { opacity: 0.9; }
+  .status { text-align: center; margin-top: 16px; font-size: 0.92rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🍰 Cheesecake Business Site Questionnaire</h1>
+    <p>Fill this out so I can start building your site — takes about 10 minutes.</p>
+  </header>
+
+  <!-- Replace YOUR_FORM_ID below with your real Formspree endpoint -->
+  <form action="https://formspree.io/f/mvzekqbe" method="POST">
+    <input type="hidden" name="_subject" value="Cheesecake Business Site Questionnaire submission">
+
+    <div class="cat">
+      <h2>Your Info</h2>
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" name="Name" required>
+      </div>
+      <div class="q">
+        <label>Your email</label>
+        <input type="email" name="Email" required>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Business Basics</h2>
+      <div class="q">
+        <label>Business/brand name — and do you have a logo already?</label>
+        <textarea name="Brand name and logo" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Is this a licensed home bakery (cottage food law) or a commercial kitchen?</label>
+        <span class="note">Affects what claims you can legally make about ordering/delivery area.</span>
+        <textarea name="Bakery licensing" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>What area do you serve — local delivery/pickup only, or shipping nationwide?</label>
+        <textarea name="Service area" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any existing Instagram/Facebook/Etsy presence to pull from?</label>
+        <textarea name="Existing social media" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Products</h2>
+      <div class="q">
+        <label>Is the menu fixed (same flavors always available) or rotating/seasonal?</label>
+        <textarea name="Menu type" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Roughly how many flavors/products at a time?</label>
+        <textarea name="Number of flavors" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you do custom orders (custom flavors, sizes, designs for events)?</label>
+        <span class="note">If so, you'll likely want a custom order request form.</span>
+        <textarea name="Custom orders" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you sell whole cakes only, or also slices/minis/jars?</label>
+        <textarea name="Product formats" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you have good photos already, or do we need to plan a shoot?</label>
+        <span class="note">Natural light, styled shots — makes a huge difference for food. Upload any existing photos here — no account needed: <a href="https://mega.nz/filerequest/evZIuV38PqM" target="_blank" style="color:#ff69b4;">mega.nz/filerequest/evZIuV38PqM</a></span>
+        <textarea name="Product photos" rows="2" placeholder="Let me know once you've uploaded, or if you don't have photos yet"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Ordering &amp; Payments</h2>
+      <div class="q">
+        <label>How do people currently order — DM, phone, text? Keep that, or move to an online order form/cart?</label>
+        <textarea name="Ordering method" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you need date/time selection for pickup?</label>
+        <span class="note">Baked goods usually need lead time.</span>
+        <textarea name="Pickup scheduling" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>How do you want to get paid?</label>
+        <span class="note">Since you don't have anything set up yet — bakeries are a totally standard, low-risk category, so any of these work: Square (great all-around pick, has built-in order/pickup scheduling), Stripe (clean custom checkout), PayPal (customers already trust it), or Venmo/Cash App Business (simplest, good for casual local orders). Let me know which sounds good, or if you want a recommendation.</span>
+        <textarea name="Payment method" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you need a way to block out days you're not taking orders?</label>
+        <textarea name="Blackout days" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Content &amp; Vibe</h2>
+      <div class="q">
+        <label>Describe the vibe in 3 words</label>
+        <span class="note">e.g. "cozy, homemade, elegant" vs "bold, modern, boutique"</span>
+        <textarea name="Aesthetic" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any bakery websites/brands you love the look of?</label>
+        <textarea name="Competitor inspiration" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Do you want customer reviews/testimonials featured?</label>
+        <textarea name="Testimonials" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Any brand colors or fonts already in use (packaging, labels, social posts)?</label>
+        <textarea name="Brand assets" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="cat">
+      <h2>Practical</h2>
+      <div class="q">
+        <label>Domain name — do you have one, or need to pick one?</label>
+        <textarea name="Domain name" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Want an "About" section telling your story?</label>
+        <span class="note">Home bakeries often do really well leaning into the personal story.</span>
+        <textarea name="About section" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label>Who updates the menu/flavors later — you, or me?</label>
+        <textarea name="Ongoing updates" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit">Submit Questionnaire</button>
+      <div class="status">Your answers go straight to me by email — nothing is saved on this page.</div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
